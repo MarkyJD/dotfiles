@@ -1,0 +1,190 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+	// General
+	{
+		"context": "Workspace",
+		"bindings": {
+			"shift shift": "file_finder::Toggle"
+		}
+	},
+
+	// Better escape
+	{
+		"context": "Editor && vim_mode == insert && !menu",
+		"bindings": {
+			"j j": "vim::NormalBefore"
+			// "j k": "vim::NormalBefore"
+		}
+	},
+
+	// Terminal
+	{
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-/": "workspace::ToggleBottomDock"
+		}
+	},
+
+	// Window's navigation
+	{
+		"context": "Dock || Terminal || Editor",
+		"bindings": {
+			// Window's motions
+			"ctrl-h": "workspace::ActivatePaneLeft",
+			"ctrl-l": "workspace::ActivatePaneRight",
+			"ctrl-k": "workspace::ActivatePaneUp",
+			"ctrl-j": "workspace::ActivatePaneDown"
+		}
+	},
+	{
+		"context": "GitPanel",
+		"bindings": {
+			"q": "git_panel::Close"
+		}
+	},
+
+	// Leader shortcuts
+	{
+		"context": "Editor && VimControl && !VimWaiting && !menu",
+		"bindings": {
+			"space ,": "tab_switcher::Toggle",
+			// Refactoring
+			"space c r ": "editor::Rename",
+			// Chat with AI
+			"space a": "agent::ToggleFocus",
+			"ctrl-\\": "workspace::ToggleRightDock",
+			"cmd-k": "workspace::ToggleRightDock",
+			"space a e": "assistant::InlineAssist",
+			"cmd-l": "assistant::InlineAssist",
+			"space a t": "workspace::ToggleRightDock",
+			"space h": "editor::ToggleInlayHints",
+
+			// Git
+			"space g": "git_panel::ToggleFocus",
+
+			// Ai
+
+			// Toggle text-wrap
+			"space w": "editor::ToggleSoftWrap",
+
+			// Toggle zen mode
+			"space z": "workspace::ToggleCenteredLayout",
+
+			// Tab things. Almost as good as harpoon.
+			"space 1": ["pane::ActivateItem", 0],
+			"space 2": ["pane::ActivateItem", 1],
+			"space 3": ["pane::ActivateItem", 2],
+			"space 4": ["pane::ActivateItem", 3],
+			"space 5": ["pane::ActivateItem", 4],
+			"space 6": ["pane::ActivateItem", 5],
+			"space 7": ["pane::ActivateItem", 6],
+			"space 8": ["pane::ActivateItem", 7],
+			"space 9": ["pane::ActivateItem", 8],
+			"space 0": "pane::ActivateLastItem"
+		}
+	},
+
+	// Normal only
+	{
+		"context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+		"bindings": {
+			"space .": "editor::ToggleCodeActions",
+			"g d": "editor::GoToDefinition",
+			"g D": "editor::GoToDefinitionSplit",
+			"space s": "outline::Toggle",
+			"space S": "project_symbols::Toggle",
+			"space x": "diagnostics::Deploy",
+			"] e": "editor::GoToDiagnostic",
+			"[ e": "editor::GoToPreviousDiagnostic",
+
+			// Buffers
+			"shift-h": "pane::ActivatePreviousItem",
+			"shift-l": "pane::ActivateNextItem",
+			"shift-q": "pane::CloseActiveItem",
+			"shift-q a": "pane::CloseAllItems",
+			"shift-q o": "pane::CloseOtherItems",
+			"ctrl-q": "pane::CloseActiveItem",
+
+			"space e": "pane::RevealInProjectPanel",
+			"space /": "file_finder::Toggle"
+		}
+	},
+
+	// Comments
+	{
+		"context": "Editor && vim_mode == visual && !VimWating && !menu",
+		"bindings": {
+			"g c": "editor::ToggleComments"
+		}
+	},
+
+	// Other
+	{
+		"context": "Editor &&  (vim_mode == visual || vim_mode == normal) && !VimWaiting && !VimObject",
+		"bindings": {
+			// Line's Motions
+			"alt-j": "editor::MoveLineDown",
+			"alt-k": "editor::MoveLineUp"
+		}
+	},
+
+	// Any Brackets
+	{
+		"context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+		"bindings": {
+			"b": "vim::AnyBrackets"
+		}
+	},
+	// Vim sneak motion
+	{
+		"context": "vim_mode == normal || vim_mode == visual",
+		"bindings": {
+			"z": "vim::PushSneak",
+			"Z": "vim::PushSneakBackward"
+		}
+	},
+
+	// Surround
+	{
+		"context": "vim_mode == visual",
+		"bindings": {
+			"S": "vim::PushAddSurrounds"
+		}
+	},
+
+	// File panel
+	{
+		"context": "ProjectPanel && not_editing",
+		"bindings": {
+			"a": "project_panel::NewFile",
+			"A": "project_panel::NewDirectory",
+			"d": "project_panel::Delete",
+			"x": "project_panel::Cut",
+			"c": "project_panel::Copy",
+			"p": "project_panel::Paste",
+			"q": "workspace::ToggleLeftDock",
+			"space e": "workspace::ToggleLeftDock"
+		}
+	},
+
+	// Window's overrides for basic shortcuts
+	{
+		"context": "Editor && !menu",
+		"bindings": {
+			"ctrl-c": "editor::Copy",
+			"ctrl-x": "editor::Cut",
+			"ctrl-v": "editor::Paste",
+			"ctrl-z": "editor::Undo",
+			"ctrl-y": "editor::Redo",
+			"ctrl-a": "editor::SelectAll",
+			"ctrl-f": "buffer_search::Deploy",
+			"ctrl-s": "workspace::Save"
+		}
+	}
+]
