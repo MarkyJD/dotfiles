@@ -1,0 +1,97 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+	"agent": {
+		"default_profile": "ask",
+		"default_model": {
+			"provider": "google",
+			"model": "gemini-2.5-flash"
+		},
+		"model_parameters": []
+	},
+	"agent_ui_font_size": 16.0,
+	"ui_font_family": ".ZedSans",
+	"ui_font_weight": 400.0,
+	"telemetry": {
+		"diagnostics": false,
+		"metrics": false
+	},
+	"vim_mode": true,
+	"icon_theme": {
+		"mode": "system",
+		"light": "Catppuccin Latte",
+		"dark": "Zed (Default)"
+	},
+	"ui_font_size": 17.0,
+	"buffer_font_size": 15,
+	"theme": {
+		"mode": "system",
+		"light": "Github Plus Light",
+		"dark": "One Dark"
+	},
+	"tabs": {
+		"file_icons": true,
+		"git_status": true
+	},
+	"tab_bar": {
+		"show": true
+		// "show_nav_history_buttons": false,
+	},
+	"indent_guides": {
+		"enabled": true,
+		"coloring": "indent_aware"
+	},
+	"colorize_brackets": true,
+
+	"file_types": {
+		"Dockerfile": ["Dockerfile", "Dockerfile.*"],
+		"JSON": ["json", "jsonc", "*.code-snippets"]
+	},
+
+	// Toggle hints
+	"inlay_hints": {
+		"enabled": false
+	},
+
+	"formatter": {
+		"language_server": {
+			"name": "biome"
+		}
+	},
+	"code_actions_on_format": {
+		"source.fixAll.biome": true,
+		"source.organizeImports.biome": true
+	}
+
+	// Configure biome to be default formatter
+	// "languages": {
+	//   "JavaScript": {
+	//     "formatter": { "language_server": { "name": "biome" } },
+	//     "code_actions_on_format": {
+	//       "source.fixAll.biome": true,
+	//       "source.organizeImports.biome": true,
+	//     },
+	//   },
+	//   "TypeScript": {
+	//     "formatter": { "language_server": { "name": "biome" } },
+	//     "code_actions_on_format": {
+	//       "source.fixAll.biome": true,
+	//       "source.organizeImports.biome": true,
+	//     },
+	//   },
+	//   "TSX": {
+	//     "formatter": { "language_server": { "name": "biome" } },
+	//     "code_actions_on_format": {
+	//       "source.fixAll.biome": true,
+
+	//       "source.organizeImports.biome": true,
+	//     },
+	//   },
+	// },
+}
